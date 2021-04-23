@@ -18,7 +18,7 @@ body{
 }
 
 .redes, .logo{
-    background-color: black;
+    background-color: grey;
     display: flex;
     justify-content: center;
     padding-top: 30px;
@@ -36,13 +36,14 @@ body{
 .carrusel{
     display: flex;
     justify-content: center;
+    background-color: black;
 }
 
 h5{
     text-align: center;
 }
 
-.carousel-item>img{
+a>img{
     width: 1100px;
     height: 700px;
 }
@@ -119,4 +120,9 @@ h6{
     box-sizing: border-box;
     font-size: 17px;
     border: none;
+}
+
+.trabajos{
+    width: 400px;
+    height: 300px;
 }
