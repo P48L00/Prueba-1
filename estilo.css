@@ -1,55 +1,150 @@
-.contenedor{
-    width: 100%;
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background: red;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 2000;
 }
 
-body{
-    background-color:white;
-}
-.logo>img{
-    width: 100px;
-    height: 100px;
-    margin: 10px;
+#btn-menu{
+    display: none;
 }
 
-.redes>img{
+header label{
+    display: none;
     width: 50px;
     height: 50px;
-    margin: 5px;
+    padding: 10px;
+}
+header label:hover{
+    cursor: pointer;
+    background: rgb(175, 6, 40);
 }
 
-.redes, .logo{
-    background-color: grey;
+header .menu{
     display: flex;
-    justify-content: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
 }
 
-.nombre{
-    color: yellow;
-    background-color: red;
+header .menu ul{
+    list-style: none;
     display: flex;
-    justify-content: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    justify-content: space-between;
 }
+.menu .logo{
+    padding-top: 5px;
+    padding-right: 40px;
+}
+
+.menu a{
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    padding: 20px 30px;
+    display: block;
+}
+.menu a:hover{
+    background: rgb(175, 6, 40);
+}
+header .menu ul li ul{
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+header .menu ul li ul{
+    position: absolute;
+    background: rgb(175, 6, 40);
+}
+header .menu ul li ul li{
+    position: relative;
+}
+header .menu ul li:hover > ul{
+    display: block;
+}
+
+@media (max-width: 900px){
+    
+    header label{
+        display: block;
+    }
+
+    .menu{
+        position: absolute;
+        background: red;
+        width: 40%;
+        margin-left: -40%;
+        transition: all 0.5s;
+    }
+
+    .menu ul{
+        flex-direction: column;
+    }
+
+    .menu .logo{
+        padding-left: 30px;
+    }
+
+    #btn-menu:checked ~ .menu{
+        margin: 0;
+    }
+
+    h7{
+        font-size: 13px;
+    }
+}
+
+.social{
+    position: fixed;
+    top: 450px;
+    left: -35px;
+    z-index: 1500;
+}
+
+.social ul{
+    list-style: none;
+}
+
+.social ul li a{
+    display: inline-block;
+    color: white;
+    padding: 20px 25px;
+    text-decoration: none;
+}
+
+.social ul li .icon-facebook {background: #3b5998;}
+.social ul li .icon-twitter {background: #00abf0;}
+.social ul li .icon-instagram {background: rgb(240, 3, 82);}
+.social ul li .icon-whatsapp {background: rgb(9, 238, 9);}
+
+.social ul li a:hover{
+    padding: 20px 40px;
+    transition: all 0.2s;
+}
+
+main{
+    padding-top: 7rem;
+}
+
 .carrusel{
     display: flex;
     justify-content: center;
-    background-color: beige;
 }
 
 h5{
     text-align: center;
 }
 
-a>img{
+.carrusel a>img{
     width: 900px;
     height: 600px;
 }
 
 @media(max-width: 1000px){
-    a>img{
+    .carrusel a>img{
         width: 500px;
         height: 300px;
     }
@@ -97,32 +192,40 @@ b{
     display: flex;
     justify-content: center;
 }
-.formulario{
-    width: 450px;
-    margin: auto;
-    background-color: rgba(0, 0, 0, 0, 0.4);
-    padding: 10px 20px;
-    box-sizing: border-box;
-    margin-top: 20px;
-    border-radius: 7px;
-}
+
 h6{
     color: white;
-    text-align: center;
-    margin: 0;
-    font-size: 30px;
-    margin-bottom: 20px;
 }
-.input, .textarea{
+h7{
+    color: white;
+}
+
+.formulario .input, .textarea{
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     padding: 7px;
     box-sizing: border-box;
     font-size: 17px;
     border: none;
 }
 
+textarea{
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+}
+
 .trabajos{
     width: 400px;
     height: 300px;
+}
+
+footer{
+    background: grey;
+    padding: 1rem;
+    text-align: center;
+}
+
+p{
+    color: white;
 }
