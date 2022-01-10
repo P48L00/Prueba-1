@@ -18,7 +18,7 @@
             <li><a href="#">Inicio</a></li>
             <li><a href="#Nuestros servicios">Servicio</a></li>
             <li><a href="#Nuestro trabajos">Galeria</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#Contacto">Contacto</a></li>
             <li><a href="#">Cuenta</a>
                 <ul>
                     <li><a href="registro usuario.html">Registro usuario</a></li>
@@ -95,23 +95,23 @@
   
   <div class="row mb-4 mb-lg-0">
     <div class="col-6 col-lg mb-3">
-      <a href=""> <img src="img/motor-170x170.png" alt=""></a> <h3>AJUSTES DE MOTOR</h3>
+      <a href="motor.html"> <img src="img/motor-170x170.png" alt=""></a> <h3>AJUSTES DE MOTOR</h3>
     </div>
   
     <div class="col-6 col-lg mb-3">
-      <a href=""><img src="img/frenos-170x170.png" alt=""></a> <h3>AJUSTES DE FRENOS</h3>
+      <a href="frenos.html"><img src="img/frenos-170x170.png" alt=""></a> <h3>AJUSTES DE FRENOS</h3>
     </div>
 
     <div class="col-6 col-lg mb-3">
-      <a href=""><img src="img/electricidad-170x170.png" alt=""></a> <h3>SISTEMA ELECTRICO</h3>
+      <a href="sistema electrico.html"><img src="img/electricidad-170x170.png" alt=""></a> <h3>SISTEMA ELECTRICO</h3>
     </div>
   
     <div class="col-6 col-lg mb-3">
-      <a href=""><img src="img/tren-delantero-170x170.png" alt=""></a> <h3>AJUSTE DE TREN DELANTERO</h3>
+      <a href="tren delantero.html"><img src="img/tren-delantero-170x170.png" alt=""></a> <h3>AJUSTE DE TREN DELANTERO</h3>
     </div>
 
     <div class="col-6 col-lg mb-3">
-      <a href=""><img src="img/pinturaydesembolladuras.png" alt=""></a> <h3>PINTURA Y DESEMBOLLADURA</h3>
+      <a href="pintura.html"><img src="img/pinturaydesembolladuras.png" alt=""></a> <h3>PINTURA Y DESEMBOLLADURA</h3>
     </div>
   </div>
 
@@ -132,21 +132,54 @@
   <br><br>
   <!--Menú de contacto-->
   <div class="contacto">
-    <div class="Formulario">
-      <h6>¡Contactanos!</h6>
-      <input type="text" name="Nombre" placeholder="Nombre" size="40" >
-      <br><br>
-      <input type="text" name="Rut (con puntos y guión)" placeholder="Rut" size="40" >
-      <br><br>
-      <input type="text" name="Correo" placeholder="Correo" size="40" >
-      <br><br>
-      <textarea name="Mensaje" placeholder="Escriba aquí su mensaje" size="40" ></textarea>
-      <br><br>
-      <input type="button" onclick="validarFormularios()" value="Enviar" id="boton">
-    </div>
+    <form id="formulario" method="post">
+  
+      <p>
+        <label for="name">Nombre</label> <br>
+        <input id="name" name="name" minlength="3" type="text" required>
+      </p>
+      
+      <p id="campo-rut">
+        <label for="name">RUT</label> <br>
+        <input id="rut" name="rut" minlength="3" type="text" required>
+        </p>
+  
+      <p>
+        <label for="email">Correo electronico</label> <br>
+        <input id="email" type="email" name="email" required>
+      </p>
+  
+      <p>
+          <label for="Mensaje">Mensaje</label><br><br>
+          <textarea name="Mensaje" placeholder="Escriba aquí su mensaje" size="40" required></textarea>
+      </p>
+  
+      <p>
+        <input class="submit" type="submit" value="Enviar">
+        <input id="btnLimpiar" type="button" value="Limpiar">
+      </p>
+  </form>
+  
+  <script>
+    $(document).ready(function(){
+      $("#btnLimpiar").click(function(event) {
+          $("#formulario")[0].reset();
+      });
+      
+      $("#boton-rut").click(function(event) {
+          $('#rut').addAttr('required')​;​​​​
+      });
+  
+      $("#boton-pasaporte").click(function(event) {
+          $("#campo-rut").hide();
+          $('#rut').removeAttr('required');​​​​​
+          $('#pasaporte').addAttr('required')​;​​​​
+      });
+  });
+  </script>
   </div>
+  </main>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="FormularioContacto.js"></script>
-  </main>
 </body>
 </html>
