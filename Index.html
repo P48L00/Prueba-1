@@ -27,6 +27,10 @@
             </li>
         </ul>
     </nav>
+    <form class="busca d-flex">
+      <input class="form-control me-2" type="search" placeholder="Buscador" aria-label="Search">
+      <button class="btn btn-success" type="submit">Buscar</button>
+    </form>
   </header>
 
   <div class="social">
@@ -156,15 +160,11 @@
   
       <p>
         <input class="submit" type="submit" value="Enviar">
-        <input id="btnLimpiar" type="button" value="Limpiar">
       </p>
   </form>
   
   <script>
     $(document).ready(function(){
-      $("#btnLimpiar").click(function(event) {
-          $("#formulario")[0].reset();
-      });
       
       $("#boton-rut").click(function(event) {
           $('#rut').addAttr('required')​;​​​​
