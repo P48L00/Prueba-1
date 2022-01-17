@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Clima</title>
+    <link rel="stylesheet" href="estilos2.css">
+    <script src="api.js"></script>
+</head>
+<body>
+    <div class="inicio">
+		<a href="Index.html">
+			<img src="img/icons8_car_service_60px.png" alt="logo" width="100">
+		</a>
+        <h1>Api Clima</h1>
+    </div>
+    <form>
+        <div class="mb-3 form-check">
+            <label for="ciudad">Ciudad:</label><br>
+            <input type="text" name="ciudad" id="ciudad">
+        </div>
+
+        <div class="mb-3 form-check">
+            <label for="pais">Pais</label><br>
+            <select name="pais" id="pais">
+                <option value="">-- Selecione un pais --</option>
+                <option value="CL">Chile</option>
+                <option value="AR">Argentina</option>
+                <option value="PE">Peru</option>
+                <option value="MX">México</option>
+                <option value="CO">Colombia</option>
+            </select>
+        </div>
+        <div id="msj-error"></div><br>
+
+        <button type="button" onclick="obtenerClima()">Buscar Clima</button>
+      </form>
+      <div class="resultado" id="divResultado"></div>
+</body>
+</html>
